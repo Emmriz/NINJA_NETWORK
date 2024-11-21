@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NINJA NETWORK</title>
+    <title>NINJA NETWORK | Home</title>
 </head>
 <body>
-    <h1>Welcome to the Ninja Network</h1>
-    <p>Click the button below to view the list of ninjas</p>
+    <h1>Currently available ninjas</h1>
+    <ul>
+        <li>Ninjas here</li>
+    
+    </ul>
 
 
-    <a href="/ninjas" class="btn">Find Ninjas</a>
+    <a href="" class="btn">Find Ninjas</a>
 </body>
 </html>
