@@ -6,13 +6,24 @@
     <title>NINJA NETWORK | Home</title>
 </head>
 <body>
-    <h1>Currently available ninjas</h1>
+    <h1>Currently Available Ninjas</h1>
+
+    <p>{{ $greeting }}</p>
     <ul>
-        <li>Ninjas here</li>
+        <li>
+            <a href="/ninjas/{{$ninjas[0]["id"]}}">
+                {{$ninjas[0]["name"]}}
+            </a>
+        </li>
+
+        <li>
+            <a href="/ninjas/{{$ninjas[1]["id"]}}">
+                {{$ninjas[1]["name"]}}
+            </a>
+        </li>
     
     </ul>
 
 
-    <a href="" class="btn">Find Ninjas</a>
 </body>
 </html>
