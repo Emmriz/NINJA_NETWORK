@@ -9,7 +9,7 @@ class NinjaController extends Controller
 {
     public function index(){
         //rout --> /ninjas/
-        $ninjas = Ninja::orderBy('created_at', 'desc')->get();
+        $ninjas = Ninja::orderBy('created_at', 'desc')->paginate(8);
         return view('ninjas.index', [ "ninjas" => $ninjas]);
     }
 
