@@ -50,7 +50,7 @@ class NinjaController extends Controller
         $ninja = Ninja::findOrFail($id);
         $ninja->delete();
 
-        return redirect()->route('ninjas.index')->with('success', 'Ninja deleted successfully!');
+        return redirect()->route('ninjas.index')->with('success', 'Ninja Deleted successfully!');
     }
 
     //edit() and update() for edite view and update requests
