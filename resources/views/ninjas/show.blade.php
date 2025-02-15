@@ -22,6 +22,8 @@
 
         <button type="submit" class="btn my-4">Delete Ninja</button>
 
-
     </form>
+
+    
+
 </x-layout>
