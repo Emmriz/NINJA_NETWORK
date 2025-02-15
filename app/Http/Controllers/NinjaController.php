@@ -3,20 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ninja;
+use App\Models\Dojo;
 use Illuminate\Http\Request;
 
 class NinjaController extends Controller
 {
     public function index(){
         //rout --> /ninjas/
-        $ninjas = Ninja::orderBy('created_at', 'desc')->paginate(8);
+        $ninjas = Ninja::with ('dojo')->orderBy('created_at', 'desc')->paginate(8);
         return view('ninjas.index', [ "ninjas" => $ninjas]);
     }
 
     public function show($id){
         //route --> /ninjas/{id}
         //fetch a single record & pass into the show view
-        $ninja = Ninja::findOrFail($id);
+        $ninja = Ninja::with('dojo')->findOrFail($id);
 
         return view('ninjas.show', ["ninja" => $ninja]);
     }
@@ -24,7 +25,8 @@ class NinjaController extends Controller
     public function create(){
         //route --> /ninjas/create
         //render a create view (with the web form) to users.
-        return view('ninjas.create');
+        $dojos = Dojo::all();
+        return view('ninjas.create', ["dojos" => $dojos]);
     }
 
     public function store(){
