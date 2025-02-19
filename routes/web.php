@@ -8,8 +8,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//This route shows the registration and login web pages
 Route::get('/register',[AuthController::class,'showRegister'])->name('show.register');
 Route::get('/login',[AuthController::class,'showLogin'])->name('show.login');
+
+//this route handles registration and login process when the data is submitted
+Route::post('/register',[AuthController::class,'register'])->name('register');
+Route::post('/login',[AuthController::class,'login'])->name('login');
 
 Route::get('/ninjas', [NinjaController::class, 'index'])->name('ninjas.index');
 Route::get('/ninjas/create', [NinjaController::class, 'create'])->name('ninjas.create');
